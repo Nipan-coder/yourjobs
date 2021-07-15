@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- bootstrap links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  <!-- css links -->
+
+  <link rel="stylesheet" href="{% static "app/css/style.css" %}">
+  <!-- font awsome link -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <title>YourJobs</title>
+</head>
+
+<body>
+
+  <!-- head section -->
+  <section id="header">
+
+    <!-- nav bar -->
+    <div class="menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" id="logo" href="#">YourJobs</a>
+          <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Find Jobs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'post' %}">Post Jobs</a>
+              </li>
+            </ul>
+
+          </div>
+          
+        </div>
+      </nav>
+    </div>
+
+    <!-- bsnner part -->
+    <div class="banner text-center">
+      <!-- <img src="{% static "app/image/banner3.jpg" %}" alt="" srcset=""> -->
+      <h2>welcome to <span id="blogo"> YourJobs</span> </h2>
+    </div>
+  </section>
+
+  <!-- search part -->
+  <div class="search text-left col-10">
+    <h5>Find Your Job Here</h5>
+    <form method="GET" action="{% url 'search' %}" class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search By Job Title or Company Name or Location"
+        aria-label="Search" name="search" id="search">
+      <button class="btn btn-sm" type="submit">Find Jobs</button>
+    </form>
+  </div>
+
+  {% block content %}
+
+  {% endblock content %}
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h5>About</h5>
+          <p class="text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet consequatur accusantium
+            voluptate, architecto dicta vel fugit. Dicta accusamus sint consequatur. Dolor, inventore adipisci
+            perferendis voluptates aperiam qui non cum officiis.</p>
+        </div>
+
+        <div class="col-xs-6 col-md-6">
+          <h5>Address</h5>
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59456.938882420916!2d83.59455673636661!3d21.348180521384435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a214a88434a0e43%3A0x27a43bbe4f9940a7!2sBargarh%2C%20Odisha!5e0!3m2!1sen!2sin!4v1626251249094!5m2!1sen!2sin"
+              width="90%" height="30%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-10">
+          <p class="copyright-text">Designed By Nipan Pradhan &copy; 2021 All Rights Reserved by
+            <a href="#">YourJobs</a>.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-10">
+          <ul class="social-icons">
+            <li><a class="facebook" href="https://www.facebook.com/nipan.pradhan"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li><a class="twitter" href="https://twitter.com/PradhanNipan"><i class="fab fa-twitter"></i></a></li>
+            <li><a class="instagram" href="https://www.instagram.com/nipanpradhan_11/"><i
+                  class="fab fa-instagram"></i></a></li>
+            <li><a class="linkedin" href="https://www.linkedin.com/in/nipan-pradhan-6a6636198/"><i
+                  class="fab fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<!-- recent updates -->
+
+
+
+<div class="container p-1">
+  <div class="row p-1 justify-content-around">
+    <div class="col-9 p-1 m-3 updates">
+      <h5 class="text-center">Recent Job Updates</h5>
+      <div class="row p-2">
+        {% for d in products %}
+        <div class="col-sm-12 ">
+          <div class="card mt-2 job">
+            <div class="card-body p-3">
+              <h6 class="card-title"><b>{{d.jtitle}}</b></h6>
+              <p class="card-text">{{d.cname}}</p>
+              <i class="fa fa-briefcase"></i> <span> {{d.eto}}-{{d.efrom}} yrs</span><br>
+              <i class="fa fa-rupee-sign"></i> <span> {{d.sto}} - {{d.sfrom}} LPA</span><br>
+              <i class="fa fa-map-marker-alt"></i> <span>{{d.location}}</span><br><br>
+              <p> Job Description - <span> {{d.dec}} <a href="#">Read more</a></span>
+              </p>
+              <div class="apply-btn">
+                <button class="btn btn-sm btn-primary ">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="col-sm-2 text-center p-1 m-3  company">
+      <h5>Top Company</h5>
+      <div class="container">
+        <div>
+          <img src="{% static "app/image/logos/10.png" %}">
+          <img src="{% static "app/image/logos/1.png" %}">
+          <img src="{% static "app/image/logos/11.png" %}">
+          <img src="{% static "app/image/logos/12.png" %}">
+          <img src="{% static "app/image/logos/22.png" %}">
+          <img src="{% static "app/image/logos/13.png" %}">
+          <img src="{% static "app/image/logos/4.png" %}">
+
+        </div>
+        <div>
+          <img src="{% static "app/image/logos/3.png" %}">
+          <img src="{% static "app/image/logos/9.png" %}">
+          <img src="{% static "app/image/logos/8.png" %}">
+          <img src="{% static "app/image/logos/5.png" %}">
+          <img src="{% static "app/image/logos/77.png" %}">
+          <img src="{% static "app/image/logos/6.png" %}">
+          <img src="{% static "app/image/logos/88.png" %}">
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- download app part -->
+
+<section class="download">
+  <h5 class="text-center"> Find Jobs On Mobile, Download YourJobs App</h5>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 text-center mt-3">
+        <a class="app my-2"><i class="fab fa-google-play"></i> <span> Get Android App</span></a>
+      </div>
+      <div class="col-sm-12 col-md-6 text-center mt-3">
+        <a class="app"><i class="fab fa-apple"></i> <span> Get ios App</span></a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+<!-- home page end -->
+
+{% endblock content %}

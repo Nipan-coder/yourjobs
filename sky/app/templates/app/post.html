@@ -1,0 +1,76 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-6 postjob">
+
+      <form class="row g-3" method="POST" action="">
+        {% csrf_token %}
+
+        <div class="col-12">
+          <label class="form-label">Job Title</label>
+          <input type="text" class="form-control" name="title" placeholder="Enter Job Title" required>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label">Company Name</label>
+          <input type="text" class="form-control" name="cname" placeholder="Enter Company Name" required>
+        </div>
+
+        <span>Experience</span>
+        <div class="col-md-6">
+          <label class="form-label">To</label>
+          <input type="number" name="eto" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Form</label>
+          <input type="number" name="eform" class="form-control" required>
+        </div>
+
+        <span>Salary</span>
+        <div class="col-md-6">
+          <label class="form-label">To</label>
+          <input type="number" name="sto" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Form</label>
+          <input type="number" name="sform" class="form-control" required>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label">Location</label>
+          <input type="text" class="form-control" name="loc" placeholder="Enter Location" required>
+        </div>
+
+
+        <div class="col-12">
+          <label class="form-label">Description</label>
+          <textarea name="dec" cols="30" rows="4" class="form-control" placeholder="Enter Job Description"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    </div>
+
+
+    <div class="col-6 text-center">
+      
+        <!-- image -->
+        <div class="readme">
+          <h5>Bet on people, not on strategies !</h5>
+          <img class="imgg" src="{% static "app/image/postjobside.png" %}">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nemo suscipit delectus reiciendis non officia vel laborum distinctio numquam eligendi. Ipsam qui dolores totam facere. Aspernatur animi sit fugit suscipit delectus reiciendis non officia vel laborum distinctio numquam eligendi. Ipsam qui dolores totam facere. Aspernatur animi sit fugit suscipit delectus reiciendis non officia vel laborum distinctio numquam eligendi. Ipsam qui dolores totam facere. Aspernatur animi sit fugit suscipit delectus reiciendis non officia vel laborum distinctio numquam eligendi. Ipsam qui dolores totam facere. Aspernatur animi sit fugit </p>
+        </div>
+        
+    </div>
+    
+
+
+  </div>
+
+</div>
+
+{% endblock content %}
